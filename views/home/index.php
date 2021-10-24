@@ -11,4 +11,7 @@
     $test = 'home';
 ?>
     <h1><?=$test?></h1>
+    <a href="/article">articles</a>
+    <a href="/login">login</a>
+    <a href="/register">register</a>
 </html>

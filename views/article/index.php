@@ -1,8 +1,6 @@
 <h1>Index pagina van de articles</h1>
+<a href="/">home</a>
 <?php
-
-
-print_r( $articles );
 
 foreach ($articles as $article) {
     ?>
