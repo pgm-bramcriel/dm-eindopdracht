@@ -62,7 +62,7 @@ if(isset($_POST['register'])) {
             <input type="text" name="location" placeholder="location" required>
         </div>
 
-        <button type="submit" name="register">Register</button>
+        <button class="btn-primary" type="submit" name="register">Register</button>
     </form>
     <p>Already have an account?</p>
     <a href="/login">Sign in</a>
