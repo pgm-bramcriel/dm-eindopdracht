@@ -1,5 +1,5 @@
 <?php
-
+/*
 class ArticleController extends BaseController {
 
     protected function index () {
@@ -14,5 +14,5 @@ class ArticleController extends BaseController {
         $this->loadView();
     }
 
-    
+
 }

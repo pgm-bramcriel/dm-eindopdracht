@@ -31,8 +31,6 @@ if(isset($_POST['register'])) {
 <body>
     <h1>Register</h1>
 
-    <a href="/">Home</a>
-
     <form method="POST">
         <div>
             <label for="username">Username:</label>

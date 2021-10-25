@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="<?= BASE_URL; ?>/css/style.css">
-</head>
 <?php
     $test = 'home';
 ?>
     <h1><?=$test?></h1>
-    <a href="/article">articles</a>
-    <a href="/login">login</a>
-    <a href="/register">register</a>
-</html>
+    <?php
+    foreach ($articles as $article) {
+        ?>
+        <h2><?=$article["name"]?></h2>
+        <?php if ($article["description"]) {
+        ?>
+        <h2><?=$article["description"]?></h2>
+        <?php
+        }?>
+        <h2>€<?=$article["price"]?></h2>
+        <?php
+    };
