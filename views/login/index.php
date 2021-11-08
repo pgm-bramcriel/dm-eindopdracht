@@ -10,12 +10,12 @@
     <h1>Login</h1>
 
     <form method="POST">
-        <div>
+        <div class="form__item">
             <label for="username">Username:</label>
             <input type="text" name="username" placeholder="username..." required>
         </div>
 
-        <div>
+        <div class="form__item">
             <label for="password">Password:</label>
             <input type="password" name="password" placeholder="*******" required>
         </div>

@@ -9,18 +9,20 @@
     <title>document</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <?php
-                include BASE_DIR . '/views/_templates/_partials/nav.php'
-            ?>
-        </nav>
-    </header>
-    <main>
-        <?= $content; ?>
-    </main>
-    <footer>
-        FOOTER
-    </footer>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <?php
+                    include BASE_DIR . '/views/_templates/_partials/nav.php'
+                ?>
+            </nav>
+        </header>
+        <main>
+            <?= $content; ?>
+        </main>
+        <footer>
+            FOOTER
+        </footer>
+    </div>
 </body>
 </html>

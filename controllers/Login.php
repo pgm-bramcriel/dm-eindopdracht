@@ -11,7 +11,7 @@ class LoginController extends BaseController {
             $this->username = $_POST['username'];
             $this->password = $_POST['password'];
 
-            $user = Users::getUserByUsername($this->username);
+            $user = Users::getUserByUsername($this->username, $this->password);
 
             if ($user) {
                 $_SESSION['user_id'] = $user->user_id;

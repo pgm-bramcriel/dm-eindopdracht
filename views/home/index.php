@@ -1,10 +1,8 @@
+<div class="home">
 <?php
-    $test = 'home';
-?>
-    <h1><?=$test?></h1>
-    <?php
-    foreach ($articles as $article) {
-        ?>
+foreach ($articles as $article) {
+    ?>
+    <a class="home_item"href="">
         <article>
             <h2><?=$article["name"]?></h2>
             <?php if ($article["description"]) {
@@ -14,5 +12,8 @@
             }?>
             <h2>€<?=$article["price"]?></h2>
         </article>
-        <?php
-    };
+    </a>
+    <?php
+};
+?>
+</div>

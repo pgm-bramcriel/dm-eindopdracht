@@ -5,13 +5,13 @@ class Users extends BaseModel {
     protected $table = 'users';
     protected $pk = 'user_id';
 
-    protected function getUserByUsername(string $username) {
+    protected function getUserByUsername(string $username, string $password) {
         global $db;
 
-        $sql = 'SELECT * FROM `' . $this->table . '` WHERE `' . 'username' . '` = :username';
+        $sql = "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password'";
 
         $stmnt = $db->prepare($sql);
-        $stmnt->execute( [ ':username' => $username ] );
+        $stmnt->execute();
 
         return $stmnt->fetchObject();
     }
