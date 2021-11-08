@@ -19,6 +19,7 @@ class Users extends BaseModel {
     protected function postUser(string $username, string $password, string $email, int $number, string $location) {
         global $db;
         $sql = "INSERT INTO `users` (`username`, `number`, `location`, `e-mail`, `password`) VALUES ('$username', '$number', '$location', '$email', '$password');";
+        
         $stmnt = $db->prepare($sql);
         $stmnt->execute();
 
