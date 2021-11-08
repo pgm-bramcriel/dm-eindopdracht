@@ -16,6 +16,8 @@ class LoginController extends BaseController {
             if ($user) {
                 $_SESSION['user_id'] = $user->user_id;
                 $this->redirect('home');
+            } else {
+                echo 'User not registered.';
             }
           }
     }
