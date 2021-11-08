@@ -1,25 +1,3 @@
-<?php
-    global $db;
-
-    if(isset($_POST['login'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-    
-        if ($username != '' && $password != '') {
-          $sql = "SELECT * FROM `users` where `username` = '$username' AND `password` = '$password'";
-          $stmnt = $db->prepare($sql);
-          $stmnt->execute();
-          $data = $stmnt->fetch();
-          if ($password == $data[7]) {
-            echo "Welcome";
-          } else {
-            echo "User not registered";
-          }
-          print_r($data);
-        }
-      }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +19,7 @@
             <label for="password">Password:</label>
             <input type="password" name="password" placeholder="*******" required>
         </div>
-        <button class="btn-primary" type="submit" name="login">Log in</button>
+        <button class="btn-primary" type="submit">Log in</button>
     </form>
 </body>
 </html>
