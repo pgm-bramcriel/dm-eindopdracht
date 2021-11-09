@@ -14,6 +14,7 @@ class ArticleController extends BaseController {
         $this->viewParams['article'] = Article::getById($params[0]);
 
         $article_comments = Comments::getCommentsByArticleId($params[0]);
+
         $detail_comments = $article_comments;
 
         if(isset($_POST['content'])) {

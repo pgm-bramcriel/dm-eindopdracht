@@ -5,7 +5,10 @@ global $detail_comments;
 if ($detail_comments) {
     foreach ($detail_comments as $comment) {
         ?>
-            <p><?=$comment['content']?></p>
+            <div class="comment">
+                <span>User: <?=$comment['username']?></p>
+                <p><?=$comment['content']?></p>
+            </div>
         <?php
     };
 } else {

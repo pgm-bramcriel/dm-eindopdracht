@@ -7,7 +7,7 @@ class Comments extends BaseModel {
     protected function getCommentsByArticleId(int $article_id) {
         global $db;
 
-        $sql = "SELECT * FROM `comments` WHERE `article_id` = $article_id";
+        $sql = "SELECT * FROM `comments` INNER JOIN `users` ON `comments`.`user_id` = `users`.`user_id` WHERE `article_id` = $article_id";
         $stmnt = $db->prepare($sql);
         $stmnt->execute();
 
