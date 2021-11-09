@@ -4,4 +4,5 @@
 
 <?php
     include BASE_DIR . '/views/article/_partials/comments.php';
+    include BASE_DIR . '/views/article/_partials/post_comments.php';
 ?>

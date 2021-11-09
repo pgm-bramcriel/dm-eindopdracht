@@ -13,4 +13,15 @@ class Comments extends BaseModel {
 
         return $stmnt->fetchAll();
     }
+
+    protected function postComment(string $content, int $article_id) {
+        global $db;
+        global $current_user;
+
+        $sql = "INSERT INTO `comments` (`content`, `user_id`, `article_id`) VALUES ('$content', '$current_user->user_id', '$article_id');";
+        $stmnt = $db->prepare($sql);
+        $stmnt->execute();
+
+        return $stmnt->fetchObject();
+    }
 }
