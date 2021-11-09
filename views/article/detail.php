@@ -1,6 +1,7 @@
-<h1>Detail pagina van een article</h1>
+<h2><?=$article->name?></h2>
+<p><?=$article->description?></p>
+<p>€<?=$article->price?></p>
 
 <?php
-
-
-print_r( $article );
+    include BASE_DIR . '/views/article/_partials/comments.php';
+?>

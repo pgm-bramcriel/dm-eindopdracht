@@ -13,13 +13,15 @@ main {
     margin: 0 auto;
 }
 
-.home {
+.home__articles,
+.profile__articles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.home_item {
+.home_item,
+.profile_item {
     background-color: white;
     padding: 1rem;
     border-radius: 5px;
@@ -29,15 +31,16 @@ main {
     transition: 0.2s ease;
 }
 
-.home_item:hover {
+.home_item:hover,
+.profile_item:hover {
     background-color: rgb(233, 233, 233);
     transform: scale(1.05);
 }
 
 @media (min-width: 700px) {
-    .home_item {
+    .home_item,
+    .profile_item {
         width: 31%;
-        margin-bottom: 0;
     }
 }
 
