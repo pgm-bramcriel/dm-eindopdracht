@@ -24,7 +24,7 @@ if ($detail_comments) {
     };
 } else {
     ?>
-        <p>No comments yet...</p>
+        <p class="no-comment">No comments yet...</p>
     <?php
 }
 

@@ -1,6 +1,6 @@
-<h1 class="admin-title">Admin functionality</h1>
+<h2 class="admin-title">Admin functionality</h2>
 
-<h3>Delete user:</h3>
+<h2>Delete user:</h2>
 
 <form method="POST">
     <div class="form__item">
