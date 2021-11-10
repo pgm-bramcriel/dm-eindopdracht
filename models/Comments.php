@@ -24,4 +24,15 @@ class Comments extends BaseModel {
 
         return $stmnt->fetchObject();
     }
+
+    protected function deleteComment(string $comment_id) {
+        global $db;
+        global $current_user;
+
+        $sql = "DELETE FROM `comments` WHERE `comments`.`comment_id` = $comment_id";
+        $stmnt = $db->prepare($sql);
+        $stmnt->execute();
+
+        return $stmnt->fetchObject();
+    }
 }

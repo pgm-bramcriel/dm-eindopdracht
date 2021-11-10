@@ -12,4 +12,5 @@
             <a href="/logout">Logout</a>
         <?php
     }
-?>
+    ?>
+    <a href="/admin">Admin</a>

@@ -25,4 +25,27 @@ class Users extends BaseModel {
 
         return $stmnt->fetchObject();
     }
+
+    protected function updateUser(string $username, string $password, string $email, int $number, string $location) {
+        global $db;
+        global $current_user;
+
+        $sql = "UPDATE `users` SET `username` = '$username', `number` = '$number', `location` = '$location', `email` = '$email', `password` = '$password' WHERE `users`.`user_id` = $current_user->user_id";
+        
+        $stmnt = $db->prepare($sql);
+        $stmnt->execute();
+
+        return $stmnt->fetchObject();
+    }
+
+    protected function deleteUser(int $uid) {
+        global $db;
+
+        $sql = "DELETE FROM `users` WHERE `users`.`user_id` = $uid  ";
+
+        $stmnt = $db->prepare($sql);
+        $stmnt->execute();
+
+        return $stmnt->fetchObject();
+    }
 }

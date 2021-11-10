@@ -9,6 +9,10 @@
 <p>location: <?=$current_user->location?></p>
 <p>created at: <?=$current_user->created_at?></p>
 
+<?php
+include BASE_DIR . '/views/profile/_partials/update_profile.php';
+?>
+
 <h3>Your articles:</h3>
 <div class="profile__articles">
 <?php

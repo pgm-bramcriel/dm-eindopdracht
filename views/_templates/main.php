@@ -24,5 +24,7 @@
             FOOTER
         </footer>
     </div>
+
+    <script src="../js/profile.js"></script>
 </body>
 </html>
