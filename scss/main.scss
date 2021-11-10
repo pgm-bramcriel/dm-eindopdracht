@@ -1,12 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+$main-color: rgb(96, 96, 255);
+$main-white: rgb(233, 233, 233);
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    word-break: break-word;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
 body {
-    padding: 3rem;
-    background-color: rgb(243, 243, 243);
-    
+    background-color: rgb(247, 247, 247);
+    font-family: 'Lato'; 
 }
 
 main {
     margin-top: 3rem;
     margin-bottom: 3rem;
+    padding: 1rem 3rem;
 }
 
 .wrapper {
@@ -14,46 +31,84 @@ main {
     margin: 0 auto;
 }
 
-.home__articles,
-.profile__articles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.home_item,
-.profile_item {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: grey 1px 3px 15px;
-    width: 100%;
+h2 {
+    font-size: 1.5rem;
     margin-bottom: 2rem;
-    transition: 0.2s ease;
+    font-weight: bold;
 }
 
-.home_item:hover,
-.profile_item:hover {
-    background-color: rgb(233, 233, 233);
-    transform: scale(1.05);
-}
+// .home__articles,
+// .profile__articles {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+// }
 
-@media (min-width: 700px) {
-    .home_item,
-    .profile_item {
-        width: 31%;
-    }
-}
+// .home_item,
+// .profile_item {
+//     padding: 1rem;
+//     border-radius: 5px;
+//     width: 100%;
+//     margin-bottom: 2rem;
+//     transition: 0.2s ease;
+// }
 
-input {
+// .home_item:hover,
+// .profile_item:hover {
+//     transform: scale(1.05);
+// }
+
+// @media (min-width: 700px) {
+//     .home_item,
+//     .profile_item {
+//         width: 18%;
+//     }
+// }
+
+input,
+textarea {
     border: none;
     border-radius: 5px;
     box-shadow: grey 3px 4px 10px;
     padding: 0.2rem 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    resize: none;
+
+    @media (min-width: 520px) {
+        width: 15rem;
+    }
+}
+
+textarea {
+    height: 10rem;
 }
 
 .form__item {
     margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+button {
+    border: none;
+    background-color: $main-color;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    color: $main-white;
+    box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+    font-weight: bold;
+    transition: 0.2s ease;
+
+    &:hover {
+        background-color: rgb(71, 71, 190);
+    }
 }
 
 .comment {
@@ -67,7 +122,7 @@ input {
 }
 
 .show-update {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .show-form {
@@ -76,4 +131,204 @@ input {
 
 .admin-title {
     margin-bottom: 4rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    color: $main-white;
+    
+    a {
+        padding: 0 1rem;
+        font-weight: bold;
+        transition: 0.2s ease;
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    .logo {
+        padding-left: 0;
+        transition: 0.2s ease;
+
+        svg {
+            width: 3rem;
+            
+            path {
+                fill: rgb(157, 164, 179);
+            }
+        }
+
+        &:hover {
+            color: inherit;
+            transform: scale(1.03);
+        }
+    }
+
+    .nav__left {
+        display: flex;
+        align-items: center;
+    }
+}
+
+header {
+    height: 30rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0, 0, 0, 0.1)), url('../images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: rgb(194, 194, 194);
+    height: 10rem;
+    margin-top: 3rem;
+
+    .footer__inner {
+        padding: 1rem 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        width: 10rem;
+
+        a {
+            margin-bottom: 1rem;
+            transition: 0.2s ease;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+}
+
+.post-link {
+    border-bottom: solid 2px $main-color;
+    transition: 0.2s ease;
+
+    &:hover {
+        color: $main-color;
+    }
+}
+
+.home__articles,
+.profile__articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+
+    .home_item,
+    .profile_item {
+        width: 100%;
+        margin-bottom: 2rem;
+        transition: 0.2s ease;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        @media (min-width: 500px) {
+            width: 48%;
+        }
+
+        @media (min-width: 700px) {
+            width: 30%;
+        }
+
+        @media (min-width: 1100px) {
+            width: 18%;
+        }
+
+        img {
+            width: 100%;
+            height: 15rem;
+        }
+
+        &__title {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        &__description {
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        &__price {
+            // color: rgb(172, 46, 46);
+            font-weight: bold;
+        }
+    }
+}
+
+.profile-info {
+    p {
+        margin-bottom: 1rem;
+        
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.update-form {
+    margin-bottom: 2rem;
+}
+
+.detail {
+    &-info {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 40rem;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            margin-bottom: 1rem;
+        }
+
+        &__img {
+            @media (min-width: 600px) {
+                height: 100%;
+            }
+
+        }
+
+        div {
+            @media (min-width: 600px) {
+                width: 48%;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .comment {
+        margin-bottom: 2rem;
+        
+        p {
+            margin-bottom: 1rem;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    }
 }

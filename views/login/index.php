@@ -7,7 +7,7 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
+    <h2>Login</h2>
 
     <form method="POST">
         <div class="form__item">

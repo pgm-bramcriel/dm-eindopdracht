@@ -1,4 +1,4 @@
-<h2>Post an item!</h2>
+<h2 id="post" class="post--title">Post an item!</h2>
 
 <form method="POST">
     <div class="form__item">

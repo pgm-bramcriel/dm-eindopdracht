@@ -1,4 +1,4 @@
-<h3>Comments:</h3>
+<h2>Comments:</h2>
 <?php
 global $detail_comments;
 global $current_user;
@@ -7,7 +7,7 @@ if ($detail_comments) {
     foreach ($detail_comments as $comment) {
         ?>
             <div class="comment">
-                <span>User: <?=$comment['username']?></p>
+                <p><span><?=$comment['username']?></span></p>
                 <p><?=$comment['content']?></p>
 
                 <?php

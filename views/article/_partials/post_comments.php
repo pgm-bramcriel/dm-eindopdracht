@@ -1,6 +1,6 @@
 <form method="POST">
     <div class="form__item">
-        <label for="content">Description:</label>
+        <label for="content">Post comment:</label>
         <textarea name="content" placeholder="Content!"></textarea>
     </div>
 

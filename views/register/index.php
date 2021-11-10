@@ -1,5 +1,5 @@
 <body>
-    <h1>Register</h1>
+    <h2>Register</h2>
 
     <form method="POST">
         <div class="form__item">

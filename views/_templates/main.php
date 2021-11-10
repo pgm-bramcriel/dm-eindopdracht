@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= BASE_URL;?>/styling/main.css">
     <title>document</title>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
+    <header>
+        <div class="wrapper">
             <nav>
                 <?php
                     include BASE_DIR . '/views/_templates/_partials/nav.php'
                 ?>
             </nav>
-        </header>
-        <main>
-            <?= $content; ?>
-        </main>
-        <footer>
-            FOOTER
-        </footer>
-    </div>
+        </div>
+    </header>
+    <main class="wrapper">
+        <?= $content; ?>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <?php
+                include BASE_DIR . '/views/_templates/_partials/footer.php'
+            ?>
+        </div>
+    </footer>
 
     <script src="../js/profile.js"></script>
 </body>
