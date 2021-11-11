@@ -4,10 +4,11 @@
         <div class="brands">
             <?php
                 global $brands;
-
                 foreach ($brands as $brand) {
                     ?>
-                        <a href="#"><?=$brand["name"]?></a>
+                        <form method="POST">
+                            <button name="brand_id" value="<?=$brand["brand_id"]?>" type="submit"><?=$brand["name"]?></button>
+                        </form>
                     <?php
                 };
             ?>
@@ -17,6 +18,8 @@
     <div class="home__articles">
 <?php
 global $current_user;
+global $articles;
+
 $i = 300;
 foreach ($articles as $article) {
     $i++;

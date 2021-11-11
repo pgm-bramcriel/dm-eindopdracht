@@ -17,6 +17,19 @@
     </div>
 
     <div class="form__item">
+        <label for="brand">Brand:</label>
+        <select name="brand">
+            <?php
+                foreach($brands as $brand) {
+            ?>
+                    <option value=<?=$brand["brand_id"]?>><?=$brand["name"]?></option>
+                    <?php
+                };
+                ?>
+        </select>
+    </div>
+
+    <div class="form__item">
         <label for="image">Image:</label>
         <input type="file" name="image" placeholder="Drop image(s) here..." required>
     </div>

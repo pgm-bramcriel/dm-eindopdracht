@@ -34,7 +34,8 @@ h2 {
 }
 
 input,
-textarea {
+textarea,
+select {
   border: none;
   border-radius: 5px;
   box-shadow: grey 3px 4px 10px;
@@ -45,7 +46,8 @@ textarea {
 }
 @media (min-width: 520px) {
   input,
-textarea {
+textarea,
+select {
     width: 15rem;
   }
 }
@@ -346,6 +348,17 @@ footer .footer__inner a:hover {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+}
+.brands form {
+  margin-right: 0.5rem;
+}
+.brands form:last-child {
+  margin-right: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
