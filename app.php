@@ -11,6 +11,7 @@ require BASE_DIR . '/models/Article.php';
 require BASE_DIR . '/models/Users.php';
 require BASE_DIR . '/models/Comments.php';
 require BASE_DIR . '/models/Media.php';
+require BASE_DIR . '/models/Brands.php';
 
 require BASE_DIR . '/controllers/BaseController.php';
 

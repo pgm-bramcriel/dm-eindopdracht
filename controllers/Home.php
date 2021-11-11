@@ -7,7 +7,12 @@ class HomeController extends BaseController {
     private $image;
 
     protected function index () {
+        global $brands;
+
         $this->viewParams['articles'] = Article::getAll();
+        $allBrands = Brands::getAll();
+
+        $brands = $allBrands;
 
         if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price']) && isset($_POST['image'])) {
             $this->name = $_POST['name'];
@@ -17,7 +22,7 @@ class HomeController extends BaseController {
 
             $newArticle = Media::postMedia($this->name, $this->description, $this->price, $this->image);
 
-            // $this->redirect('home');
+            $this->redirect('home');
         }
         $this->loadView();
     }

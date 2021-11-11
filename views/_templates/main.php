@@ -28,6 +28,6 @@
         </div>
     </footer>
 
-    <script src="../js/profile.js"></script>
+    <script src="<?php BASE_URL; ?>/js/profile.js"></script>
 </body>
 </html>

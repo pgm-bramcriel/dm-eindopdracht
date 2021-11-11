@@ -35,4 +35,15 @@ class Comments extends BaseModel {
 
         return $stmnt->fetchObject();
     }
+
+    protected function updateComment(string $updated_content, int $comment_id) {
+        global $db;
+        global $current_user;
+
+        $sql = "UPDATE `comments` SET `content` = '$updated_content' WHERE `comments` . `comment_id` = '$comment_id'";
+        $stmnt = $db->prepare($sql);
+        $stmnt->execute();
+
+        return $stmnt->fetchObject();
+    }
 }

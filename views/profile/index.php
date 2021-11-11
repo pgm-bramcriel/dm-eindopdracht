@@ -24,7 +24,9 @@ include BASE_DIR . '/views/profile/_partials/update_profile.php';
         ?>
         <a class="profile_item" href="<?php BASE_URL;?>/article/detail/<?=$profile_article["article_id"]?>">
             <article>
-                <img src="https://picsum.photos/200/<?=$i?>">
+                <div class="img_container">
+                    <img src="https://picsum.photos/200/<?=$i?>">
+                </div>
                 <h3 class="home_item__title"><?=$profile_article["name"]?></h3>
                 <?php if ($profile_article["description"]) {
                 ?>

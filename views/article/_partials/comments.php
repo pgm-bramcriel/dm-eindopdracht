@@ -1,4 +1,4 @@
-<h2>Comments:</h2>
+<h2 id="comment">Comments:</h2>
 <?php
 global $detail_comments;
 global $current_user;
@@ -13,8 +13,21 @@ if ($detail_comments) {
                 <?php
                 if ($comment['user_id'] === $current_user->user_id) {
                     ?>
-                    <form method="POST">
-                        <button name="comment_id" value=<?=$comment['comment_id']?>>Delete</button>
+                    <div class="comment__buttons">
+                        <form method="POST">
+                            <button class="button-delete" name="comment_id" value=<?=$comment['comment_id']?>>Delete</button>
+                        </form>
+                        
+                        <div>
+                            <button class="update-comments-button">Update</button>
+                        </div>
+                    </div>
+
+                    <form class="update-comments" method="POST">
+                        <label for="updated_content">Update comment:</label>
+                        <textarea name="updated_content" placeholder="New content..."></textarea>
+
+                        <button name="new_comment_id" value=<?=$comment['comment_id']?> class="btn-primary" type="submit">Update comment!</button>
                     </form>
                     <?php
                 }

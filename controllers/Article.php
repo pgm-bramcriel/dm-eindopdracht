@@ -2,6 +2,7 @@
 class ArticleController extends BaseController {
     private $content;
     private $comment_id;
+    private $updated_content;
 
     protected function index () {
         $this->viewParams['articles'] = Article::getAll();
@@ -22,14 +23,22 @@ class ArticleController extends BaseController {
             $this->content = $_POST['content'];
 
             $new_comment = Comments::postComment($this->content, $params[0]);
-            $this->redirect($params[0]);
+            $this->redirect($params[0] . '#comment');
         }
 
         if(isset($_POST['comment_id'])) {
             $this->comment_id = $_POST['comment_id'];
 
             $deleted_comment = Comments::deleteComment($this->comment_id);
-            $this->redirect($params[0]);
+            $this->redirect($params[0] . '#comment');
+        }
+
+        if(isset($_POST['updated_content'])) {
+            $this->updated_content = $_POST['updated_content'];
+            $this->comment_id = $_POST['new_comment_id'];
+
+            $deleted_comment = Comments::updateComment($this->updated_content, $this->comment_id);
+            $this->redirect($params[0] . '#comment');
         }
 
 

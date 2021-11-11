@@ -176,11 +176,29 @@ footer .footer__inner a:hover {
 
 .home__articles,
 .profile__articles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   margin-bottom: 3rem;
   margin-top: 2rem;
+}
+@media (min-width: 500px) {
+  .home__articles,
+.profile__articles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 700px) {
+  .home__articles,
+.profile__articles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1100px) {
+  .home__articles,
+.profile__articles {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 .home__articles .home_item,
 .home__articles .profile_item,
@@ -196,36 +214,20 @@ footer .footer__inner a:hover {
 .profile__articles .profile_item:hover {
   transform: scale(1.03);
 }
-@media (min-width: 500px) {
-  .home__articles .home_item,
-.home__articles .profile_item,
-.profile__articles .home_item,
-.profile__articles .profile_item {
-    width: 48%;
-  }
-}
-@media (min-width: 700px) {
-  .home__articles .home_item,
-.home__articles .profile_item,
-.profile__articles .home_item,
-.profile__articles .profile_item {
-    width: 30%;
-  }
-}
-@media (min-width: 1100px) {
-  .home__articles .home_item,
-.home__articles .profile_item,
-.profile__articles .home_item,
-.profile__articles .profile_item {
-    width: 18%;
-  }
+.home__articles .home_item .img_container,
+.home__articles .profile_item .img_container,
+.profile__articles .home_item .img_container,
+.profile__articles .profile_item .img_container {
+  width: 100%;
+  height: 15rem;
 }
 .home__articles .home_item img,
 .home__articles .profile_item img,
 .profile__articles .home_item img,
 .profile__articles .profile_item img {
+  object-fit: cover;
   width: 100%;
-  height: 15rem;
+  height: 100%;
 }
 .home__articles .home_item__title,
 .home__articles .profile_item__title,
@@ -296,9 +298,54 @@ footer .footer__inner a:hover {
 .detail .comment span {
   font-weight: bold;
 }
+.detail .comment__buttons {
+  display: flex;
+}
+.detail .comment__buttons button {
+  margin-right: 1rem;
+}
+.detail .comment__buttons .button-delete {
+  background-color: #d12828;
+  transition: 0.2s ease;
+}
+.detail .comment__buttons .button-delete:hover {
+  background-color: #9e2a2a;
+}
 
 .no-comment {
   margin-bottom: 1rem;
+}
+
+.admin__users {
+  margin-bottom: 1rem;
+}
+
+.admin-user-title {
+  margin-top: 1rem;
+}
+
+.update-comments {
+  margin-top: 1rem;
+  display: none;
+}
+.update-comments label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.update-comments textarea {
+  display: block;
+  height: 7rem;
+  margin-bottom: 0.5rem;
+}
+
+.show-update-comment {
+  display: block;
+}
+
+.home__top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=main.css.map */
