@@ -16,5 +16,10 @@
         <input type="text" name="price" placeholder="€99" required>
     </div>
 
+    <div class="form__item">
+        <label for="image">Image:</label>
+        <input type="file" name="image" placeholder="Drop image(s) here..." required>
+    </div>
+
     <button class="btn-primary" type="submit">Post!</button>
 </form>
