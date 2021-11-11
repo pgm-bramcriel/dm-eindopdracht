@@ -5,7 +5,7 @@ class Article extends BaseModel {
     protected $table = 'articles';
     protected $pk = 'article_id';
 
-    protected function postArticle (string $name, string $description, string $price) {
+    protected function postArticle (string $name, string $description, int $price) {
         global $db;
         global $current_user;
 
@@ -15,7 +15,7 @@ class Article extends BaseModel {
         $stmnt = $db->prepare($sql);
         $stmnt->execute();
 
-        return $stmnt->fetchObject();
+        return $db->lastInsertId();
     }
 
     protected function getArticleByUserId (int $user_id) {

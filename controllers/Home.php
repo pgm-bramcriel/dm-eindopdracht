@@ -15,10 +15,9 @@ class HomeController extends BaseController {
             $this->price = $_POST['price'];
             $this->image = $_POST['image'];
 
-            $newArticle = Article::postArticle($this->name, $this->description, $this->price);
-            $articleImage = Media::postMedia($this->image, $newArticle->article_id);
+            $newArticle = Media::postMedia($this->name, $this->description, $this->price, $this->image);
 
-            $this->redirect('home');
+            // $this->redirect('home');
         }
         $this->loadView();
     }
