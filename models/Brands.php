@@ -8,7 +8,7 @@ class Brands extends BaseModel {
     protected function postBrand (string $name) {
         global $db;
 
-        $sql = "INSERT INTO `brands` (`name`) VALUES ('$name')";
+        $sql = "INSERT INTO `brands` (`brand_name`) VALUES ('$name')";
         
         $stmnt = $db->prepare($sql);
         $stmnt->execute();
@@ -30,7 +30,7 @@ class Brands extends BaseModel {
     protected function updateBrand (string $newBrandName, int $brand_id) {
         global $db;
 
-        $sql = "UPDATE `brands` SET `name` = '$newBrandName' WHERE `brands` . `brand_id` = '$brand_id'";
+        $sql = "UPDATE `brands` SET `brand_name` = '$newBrandName' WHERE `brands` . `brand_id` = '$brand_id'";
          
         $stmnt = $db->prepare($sql);
         $stmnt->execute();

@@ -4,10 +4,12 @@
         <div class="brands">
             <?php
                 global $brands;
+                global $types;
+                
                 foreach ($brands as $brand) {
                     ?>
                         <form method="POST">
-                            <button name="brand_id" value="<?=$brand["brand_id"]?>" type="submit"><?=$brand["name"]?></button>
+                            <button name="brand_id" value="<?=$brand["brand_id"]?>" type="submit"><?=$brand["brand_name"]?></button>
                         </form>
                     <?php
                 };

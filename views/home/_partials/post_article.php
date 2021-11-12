@@ -22,7 +22,20 @@
             <?php
                 foreach($brands as $brand) {
             ?>
-                    <option value=<?=$brand["brand_id"]?>><?=$brand["name"]?></option>
+                    <option value=<?=$brand["brand_id"]?>><?=$brand["brand_name"]?></option>
+                    <?php
+                };
+                ?>
+        </select>
+    </div>
+
+    <div class="form__item">
+        <label for="type">Type:</label>
+        <select name="type">
+            <?php
+                foreach($types as $type) {
+            ?>
+                    <option value=<?=$type["type_id"]?>><?=$type["type_name"]?></option>
                     <?php
                 };
                 ?>

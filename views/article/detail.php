@@ -1,3 +1,7 @@
+<?php
+    global $article;
+?>
+
 <div class="detail">
     <div class="detail-info">
         <div class="detail-info__img">
@@ -7,6 +11,24 @@
             <h2><?=$article->name?></h2>
             <p class="price">€<?=$article->price?></p>
             <p><?=$article->description?></p>
+            <p class="detail__brand">Brand: <?=$article->brand_name?></p>
+            <p class="detail__type">Type: <?=$article->type_name?></p>
+
+            <div class="detail__poster-info">
+                <?php
+                if($article->username) {
+                    ?>
+                    <p><span>Poster:</span> <?=$article->username?></p>
+                    <p><span>Contact number: </span><?=$article->number?></p>
+                    <p><span>Contact e-mail: </span><?=$article->email?></p>
+                    <?php
+                } else {
+                    ?>
+                    <p>Deleted user</p>
+                    <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
 
