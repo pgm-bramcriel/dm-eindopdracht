@@ -25,16 +25,36 @@ class HomeController extends BaseController {
         $articles = $allArticles;
         $types = $allTypes;
 
-        if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price']) && isset($_POST['image']) && isset($_POST['brand']) && isset($_POST['type'])) {
+        if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price']) && isset($_FILES['image']) && isset($_POST['brand']) && isset($_POST['type'])) {
             $this->name = $_POST['name'];
             $this->description = $_POST['description'];
             $this->price = $_POST['price'];
-            $this->image = $_POST['image'];
+            $this->image = $_FILES['image'];
             $this->brand = $_POST['brand'];
             $this->type = $_POST['type'];
             $this->color = $_POST['color'];
             $this->condition = $_POST['condition'];
             $this->weight = $_POST['weight'];
+
+            print_r($this->image);
+
+            $upload_dir = './media/';
+            if ( !is_dir ($upload_dir)) {
+                mkdir($upload_dir);
+            }
+
+            $tmp_location = $_FILES['image']['tmp_name'];
+            $old_name = $_FILES['image']['name'];
+            $file_type = $_FILES['image']['type'];
+            $file_info = pathinfo($old_name);
+            $extension = $file_info['extension'];
+
+            if (in_array($file_type, ['image/png', 'image/jpeg', 'image/jpg'])) {
+                $image = uniqid() . '.' . $file_info['extension'];
+                $new_location = $upload_dir . $image;
+
+                move_uploaded_file($tmp_location, $new_location);
+            }
             
             $newArticle = Media::postMedia($this->name, $this->description, $this->price, $this->condition, $this->weight, $this->color, $this->image, $this->brand, $this->type);
 

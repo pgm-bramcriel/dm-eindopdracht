@@ -19,7 +19,7 @@ if ($detail_comments) {
                         </form>
                         
                         <div>
-                            <button class="update-comments-button">Update</button>
+                            <!-- <button class="update-comments-button">Update</button> -->
                         </div>
                     </div>
 

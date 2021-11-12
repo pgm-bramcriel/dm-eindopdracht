@@ -1,6 +1,6 @@
 <h2 id="post" class="post--title">Post an item!</h2>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     <div class="form__item">
         <label for="name">Title: *</label>
         <input type="text" name="name" placeholder="Yamaha B12" required>

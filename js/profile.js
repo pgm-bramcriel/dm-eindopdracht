@@ -2,8 +2,8 @@
 function showUpdateProfile () {
     const $showButton = document.querySelector('.show-update');
     const $updateForm = document.querySelector('.update-form');
-    const $updateCommentButton = document.querySelector('.update-comments-button');
-    const $updateComments = document.querySelector('.update-comments');
+    // const $updateCommentButton = document.querySelector('.update-comments-button');
+    // const $updateComments = document.querySelector('.update-comments');
     const $adminUserButton = document.querySelector('.admin-user-button');
     const $adminBrandButton = document.querySelector('.admin-brand-button');
     const $adminUser = document.querySelector('.admin-user');
@@ -21,16 +21,16 @@ function showUpdateProfile () {
         });
     }
 
-    if ($updateCommentButton && $updateComments) {
-        $updateCommentButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            if ($updateComments.classList.contains('show-update-comment')) {
-                $updateComments.classList.remove('show-update-comment');
-            } else {
-                $updateComments.classList.add('show-update-comment');
-            }
-        });
-    }
+    // if ($updateCommentButton && $updateComments) {
+    //     $updateCommentButton.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         if ($updateComments.classList.contains('show-update-comment')) {
+    //             $updateComments.classList.remove('show-update-comment');
+    //         } else {
+    //             $updateComments.classList.add('show-update-comment');
+    //         }
+    //     });
+    // }
 
     if ($adminUserButton && $adminUser) {
         $adminUserButton.addEventListener('click', (e) => {
