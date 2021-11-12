@@ -37,33 +37,9 @@ h2 {
     font-weight: bold;
 }
 
-// .home__articles,
-// .profile__articles {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
-// }
-
-// .home_item,
-// .profile_item {
-//     padding: 1rem;
-//     border-radius: 5px;
-//     width: 100%;
-//     margin-bottom: 2rem;
-//     transition: 0.2s ease;
-// }
-
-// .home_item:hover,
-// .profile_item:hover {
-//     transform: scale(1.05);
-// }
-
-// @media (min-width: 700px) {
-//     .home_item,
-//     .profile_item {
-//         width: 18%;
-//     }
-// }
+img {
+    border-radius: 5px;
+}
 
 input,
 textarea,
@@ -211,8 +187,8 @@ footer {
 }
 
 .post-link {
-    border-bottom: solid 2px $main-color;
     transition: 0.2s ease;
+    font-weight: bold;
 
     &:hover {
         color: $main-color;
@@ -420,6 +396,7 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .brands {
@@ -451,4 +428,32 @@ footer {
     span {
         font-weight: bold;
     }
+}
+
+.admin-user-button,
+.admin-brand-button {
+    margin-bottom: 1rem;
+}
+
+.brand-user,
+.admin-user {
+    button {
+        margin-bottom: 1rem;
+    }
+}
+
+.detail__extra-info {
+    margin-top: 1rem;
+}
+
+.admin-user {
+    display: none;
+}
+
+.brand-user {
+    display: none;
+}
+
+.show-manage {
+    display: block;
 }

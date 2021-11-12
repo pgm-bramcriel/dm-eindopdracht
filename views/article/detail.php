@@ -11,6 +11,37 @@
             <h2><?=$article->name?></h2>
             <p class="price">€<?=$article->price?></p>
             <p><?=$article->description?></p>
+
+            <?php
+                if ($article->color) {
+                    ?>
+                    <div class="detail__extra-info">
+                        <span >Color: <?=$article->color?></span>
+                    </div>
+                    <?php
+                }
+            ?>
+
+            <?php
+                if ($article->condition) {
+                    ?>
+                    <div class="detail__extra-info">
+                        <span >Condition: <?=$article->condition?></span>
+                    </div>
+                    <?php
+                }
+            ?>
+
+            <?php
+                if ($article->weight) {
+                    ?>
+                    <div class="detail__extra-info">
+                        <span >Weight: <?=$article->weight?>kg</span>
+                    </div>
+                    <?php
+                }
+            ?>
+
             <p class="detail__brand">Brand: <?=$article->brand_name?></p>
             <p class="detail__type">Type: <?=$article->type_name?></p>
 

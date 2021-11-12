@@ -6,6 +6,9 @@ class HomeController extends BaseController {
     private $price;
     private $brand;
     private $type;
+    private $condition;
+    private $weight;
+    private $color;
     private $image;
     private $brand_id;
 
@@ -29,8 +32,11 @@ class HomeController extends BaseController {
             $this->image = $_POST['image'];
             $this->brand = $_POST['brand'];
             $this->type = $_POST['type'];
+            $this->color = $_POST['color'];
+            $this->condition = $_POST['condition'];
+            $this->weight = $_POST['weight'];
             
-            $newArticle = Media::postMedia($this->name, $this->description, $this->price, $this->image, $this->brand, $this->type);
+            $newArticle = Media::postMedia($this->name, $this->description, $this->price, $this->condition, $this->weight, $this->color, $this->image, $this->brand, $this->type);
 
             $this->redirect('home#post');
         }

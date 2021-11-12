@@ -5,12 +5,12 @@ class Article extends BaseModel {
     protected $table = 'articles';
     protected $pk = 'article_id';
 
-    protected function postArticle (string $name, string $description, int $price, int $brand_id, int $type_id) {
+    protected function postArticle (string $name, string $description, int $price, $condition, $weight, $color, int $brand_id, int $type_id) {
         global $db;
         global $current_user;
 
         $user_id = $current_user->user_id;
-        $sql = "INSERT INTO `articles` (`name`, `description`, `price`, `user_id`, `type_id`, `brand_id`) VALUES ('$name', '$description', '$price', '$user_id', '$type_id', '$brand_id');";
+        $sql = "INSERT INTO `articles` (`name`, `description`, `price`, `condition`, `weight`, `color`, `user_id`, `type_id`, `brand_id`) VALUES ('$name', '$description', '$price', '$condition', '$weight', '$color', '$user_id', '$type_id', '$brand_id');";
         
         $stmnt = $db->prepare($sql);
         $stmnt->execute();

@@ -33,6 +33,10 @@ h2 {
   font-weight: bold;
 }
 
+img {
+  border-radius: 5px;
+}
+
 input,
 textarea,
 select {
@@ -169,8 +173,8 @@ footer .footer__inner a:hover {
 }
 
 .post-link {
-  border-bottom: solid 2px #6060ff;
   transition: 0.2s ease;
+  font-weight: bold;
 }
 .post-link:hover {
   color: #6060ff;
@@ -374,6 +378,7 @@ footer .footer__inner a:hover {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .brands {
@@ -400,6 +405,32 @@ footer .footer__inner a:hover {
 }
 .detail__poster-info span {
   font-weight: bold;
+}
+
+.admin-user-button,
+.admin-brand-button {
+  margin-bottom: 1rem;
+}
+
+.brand-user button,
+.admin-user button {
+  margin-bottom: 1rem;
+}
+
+.detail__extra-info {
+  margin-top: 1rem;
+}
+
+.admin-user {
+  display: none;
+}
+
+.brand-user {
+  display: none;
+}
+
+.show-manage {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */

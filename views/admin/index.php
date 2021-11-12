@@ -1,5 +1,8 @@
 <h2 class="admin-title">Admin functionality</h2>
 
+<button class="admin-user-button">Manage users</button>
+<button class="admin-brand-button">Manage brands</button>
+
 <div class="admin-user">
     <h2>Delete user:</h2>
 
@@ -74,7 +77,7 @@
         foreach ($brands as $brand) {
             ?>
                 <div class="admin__brands">
-                    <p><span>Brand name:</span> <?=$brand["name"]?></p>
+                    <p><span>Brand name:</span> <?=$brand["brand_name"]?></p>
                     <p><span>Brand id:</span> <?=$brand["brand_id"]?></p>
                 </div>
             <?php
