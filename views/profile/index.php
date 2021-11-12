@@ -18,14 +18,23 @@ include BASE_DIR . '/views/profile/_partials/update_profile.php';
 <h2>Your articles:</h2>
 <div class="profile__articles">
 <?php
-    $i = 300;
     foreach ($profile_articles as $profile_article) {
-        $i++;
         ?>
         <a class="profile_item" href="<?php BASE_URL;?>/article/detail/<?=$profile_article["article_id"]?>">
             <article>
                 <div class="img_container">
-                    <img src="https://picsum.photos/200/<?=$i?>">
+                    <?php
+                    if ($profile_article["url"]) {
+                    ?>
+                    <img src="/media/<?=$profile_article["url"]?>">
+                    <?php
+                    }
+                    if (!$profile_article["url"]) {
+                    ?>
+                    <img src="https://picsum.photos/200/300">
+                    <?php
+                    }
+                    ?>
                 </div>
                 <h3 class="home_item__title"><?=$profile_article["name"]?></h3>
                 <?php if ($profile_article["description"]) {

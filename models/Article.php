@@ -20,7 +20,7 @@ class Article extends BaseModel {
 
     protected function getArticleByUserId (int $user_id) {
         global $db;
-        $sql = "SELECT * FROM `articles` WHERE `user_id` = '$user_id'";
+        $sql = "SELECT * FROM `articles` INNER JOIN `media` ON `media`.`article_id` = `articles`.`article_id` WHERE `user_id` = '$user_id'";
 
         $stmnt = $db->prepare($sql);
         $stmnt->execute();
@@ -30,7 +30,7 @@ class Article extends BaseModel {
 
     protected function getArticlesByBrandId (int $brand_id) {
         global $db;
-        $sql = "SELECT * FROM `articles` WHERE `brand_id` = '$brand_id'";
+        $sql = "SELECT * FROM `articles` INNER JOIN `media` ON `media`.`article_id` = `articles`.`article_id` WHERE `brand_id` = '$brand_id'";
 
         $stmnt = $db->prepare($sql);
         $stmnt->execute();
