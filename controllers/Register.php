@@ -21,6 +21,7 @@ class RegisterController extends BaseController {
             $this->location = $_POST['location'];
 
             if ($this->password === $this->confirmpassword) {
+                $this->password = password_hash($this->password, PASSWORD_DEFAULT);
                 $user = Users::postUser($this->username, $this->password, $this->email, $this->number, $this->location);
                 
                 $this->redirect('home');

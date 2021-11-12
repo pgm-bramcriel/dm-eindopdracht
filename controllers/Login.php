@@ -11,9 +11,9 @@ class LoginController extends BaseController {
             $this->username = $_POST['username'];
             $this->password = $_POST['password'];
 
-            $user = Users::getUserByUsername($this->username, $this->password);
+            $user = Users::getByUsername($this->username);
 
-            if ($user) {
+            if ($user && password_verify($this->password, $user->password)) {
                 $_SESSION['user_id'] = $user->user_id;
                 $this->redirect('home');
             } else {

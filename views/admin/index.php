@@ -1,4 +1,16 @@
+<?php
+    global $users;
+    global $brands;
+    global $adminArticles;
+?>
+
 <h2 class="admin-title">Admin functionality</h2>
+
+<div class="statistics">
+    <p class="statistics-title">Statistics:</p>
+    <p>Amount of users: <?=count($users)?></p>
+    <p>Amount of articles: <?=count($adminArticles)?></p>
+</div>
 
 <button class="admin-user-button">Manage users</button>
 <button class="admin-brand-button">Manage brands</button>
@@ -18,8 +30,6 @@
     <div>
         <h2 class="admin-user-title">Users</h2>
     <?php
-        global $users;
-
         foreach ($users as $user) {
             ?>
                 <div class="admin__users">
@@ -72,8 +82,6 @@
     <div>
         <h2 class="admin-user-title">Brands</h2>
     <?php
-        global $brands;
-
         foreach ($brands as $brand) {
             ?>
                 <div class="admin__brands">

@@ -22,14 +22,23 @@
 global $current_user;
 global $articles;
 
-$i = 300;
 foreach ($articles as $article) {
-    $i++;
     ?>
     <a class="home_item" href="<?php BASE_URL;?>/article/detail/<?=$article["article_id"]?>">
         <article>
             <div class="img_container">
-                <img src="https://picsum.photos/200/<?=$i?>">
+                <?php
+                if ($article["url"]) {
+                ?>
+                <img src="/media/<?=$article["url"]?>">
+                <?php
+                }
+                if (!$article["url"]) {
+                ?>
+                <img src="https://picsum.photos/200/300">
+                <?php
+                }
+                ?>
             </div>
             <h3 class="home_item__title"><?=$article["name"]?></h3>
             <?php if ($article["description"]) {

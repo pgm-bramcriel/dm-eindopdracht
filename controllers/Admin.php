@@ -10,12 +10,16 @@ class AdminController extends BaseController {
     protected function index () {
         global $users;
         global $brands;
+        global $adminArticles;
 
         $allUsers = Users::getAll();
         $allBrands = Brands::getAll();
+        $allAdminArticles = Article::getAll();
 
         $users = $allUsers;
         $brands = $allBrands;
+        $adminArticles = $allAdminArticles;
+        
 
         if(isset($_POST['uid'])) {
             $this->uid = $_POST['uid'];

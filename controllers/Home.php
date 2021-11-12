@@ -17,7 +17,7 @@ class HomeController extends BaseController {
         global $articles;
         global $types;
 
-        $allArticles = Article::getAll();
+        $allArticles = Article::getAllArticles();
         $allBrands = Brands::getAll();
         $allTypes = Types::getAll(); 
 
@@ -25,7 +25,7 @@ class HomeController extends BaseController {
         $articles = $allArticles;
         $types = $allTypes;
 
-        if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price']) && isset($_FILES['image']) && isset($_POST['brand']) && isset($_POST['type'])) {
+        if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price']) && isset($_FILES['image']) && isset($_POST['brand']) && isset($_POST['type']) && $_FILES['image']['size'] > 0) {
             $this->name = $_POST['name'];
             $this->description = $_POST['description'];
             $this->price = $_POST['price'];
@@ -35,8 +35,6 @@ class HomeController extends BaseController {
             $this->color = $_POST['color'];
             $this->condition = $_POST['condition'];
             $this->weight = $_POST['weight'];
-
-            print_r($this->image);
 
             $upload_dir = './media/';
             if ( !is_dir ($upload_dir)) {
@@ -54,11 +52,13 @@ class HomeController extends BaseController {
                 $new_location = $upload_dir . $image;
 
                 move_uploaded_file($tmp_location, $new_location);
-            }
-            
-            $newArticle = Media::postMedia($this->name, $this->description, $this->price, $this->condition, $this->weight, $this->color, $this->image, $this->brand, $this->type);
 
-            $this->redirect('home#post');
+                $newArticle = Media::postMedia($this->name, $this->description, $this->price, $this->condition, $this->weight, $this->color, $image, $this->brand, $this->type);
+
+                $this->redirect('home#post');
+            } else {
+                print_r('Try again.');
+            }
         }
 
         if(isset($_POST['brand_id'])) {

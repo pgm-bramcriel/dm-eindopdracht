@@ -41,11 +41,27 @@ class Article extends BaseModel {
     protected function getArticleById( int $id ) {
         global $db;
 
-        $sql = "SELECT * FROM `articles` INNER JOIN `brands` ON `articles`.`brand_id` = `brands`.`brand_id` INNER JOIN `types` ON `articles`.`type_id` = `types`.`type_id` INNER JOIN `users` ON `articles`.`user_id` = `users`.`user_id` WHERE `article_id` = '$id'";
+        $sql = "SELECT * FROM `articles`
+        INNER JOIN `media` ON `media`.`article_id` = `articles`.`article_id`
+        INNER JOIN `brands` ON `articles`.`brand_id` = `brands`.`brand_id`
+        INNER JOIN `types` ON `articles`.`type_id` = `types`.`type_id`
+        INNER JOIN `users` ON `articles`.`user_id` = `users`.`user_id`
+        WHERE `articles`.`article_id` = '$id'";
 
         $pdo_statement = $db->prepare($sql);
         $pdo_statement->execute();
 
         return $pdo_statement->fetchObject();
+    }
+
+    protected function getAllArticles() {
+        global $db;
+
+        $sql = "SELECT * FROM `articles` INNER JOIN `media` ON `media`.`article_id` = `articles`.`article_id`";
+
+        $pdo_statement = $db->prepare($sql);
+        $pdo_statement->execute();
+
+        return $pdo_statement->fetchAll();
     }
 }

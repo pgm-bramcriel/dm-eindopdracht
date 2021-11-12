@@ -24,7 +24,7 @@
 
         <div class="form__item">
             <label for="number">Phone number: *</label>
-            <input type="number" name="number" placeholder="number" required>
+            <input type="tel" name="number" placeholder="number" required>
         </div>
 
         <div class="form__item">

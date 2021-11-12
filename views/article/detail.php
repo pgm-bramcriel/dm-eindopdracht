@@ -5,7 +5,18 @@
 <div class="detail">
     <div class="detail-info">
         <div class="detail-info__img">
-            <img src="https://picsum.photos/800/900">
+            <?php
+            if ($article->url) {
+                ?>
+                <img src="/media/<?=$article->url?>">
+                <?php
+            }
+            if (!$article->url) {
+                ?>
+                <img src="https://picsum.photos/800/900">
+                <?php
+            }
+            ?>
         </div>
         <div class="detail-info__info">
             <h2><?=$article->name?></h2>

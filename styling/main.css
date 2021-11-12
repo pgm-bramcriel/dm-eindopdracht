@@ -432,4 +432,13 @@ footer .footer__inner a:hover {
   display: block;
 }
 
+.statistics-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.statistics {
+  margin-bottom: 2rem;
+}
+
 /*# sourceMappingURL=main.css.map */
